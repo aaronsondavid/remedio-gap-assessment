@@ -1,0 +1,123 @@
+/* Print CSS — collapses the tool to a clean single-page artifact.
+ * When the prospect clicks "Download PDF" (window.print()), the output card
+ * becomes the whole page. Wizard chrome, buttons, share strip, and footer
+ * are hidden. Print-color-adjust preserves the accent colors.
+ */
+
+@media print {
+  html, body {
+    background: #fff !important;
+    color: #1C2128 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .topbar,
+  .footer,
+  .progress,
+  .wizard-nav,
+  .share,
+  .utility-row,
+  .btn,
+  a.btn {
+    display: none !important;
+  }
+
+  /* Preserve the final CTA on print as a visible box + URL disclosure */
+  .final-cta {
+    display: block !important;
+    text-align: center !important;
+    border-top: 1px solid #E6E9EE !important;
+    margin-top: 20px !important;
+    padding-top: 16px !important;
+  }
+  .final-cta .btn,
+  .final-cta a.btn {
+    display: inline-block !important;
+    background: #1F6FB2 !important;
+    color: #fff !important;
+    padding: 10px 24px !important;
+    border-radius: 6px !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+  }
+  .final-cta a.btn::after {
+    content: "  →  remedio.io/gap-assessment";
+    font-family: "SF Mono", Menlo, monospace;
+    font-size: 11px;
+    font-weight: 400;
+    margin-left: 8px;
+    opacity: 0.9;
+  }
+
+  .page, .page.narrow {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .section {
+    padding: 0 !important;
+  }
+
+  /* The output card becomes the whole page */
+  .output-card {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 20mm 15mm !important;
+    page-break-inside: avoid;
+  }
+
+  .output-card .tag {
+    color: #1F6FB2 !important;
+  }
+  .output-card h2 {
+    font-size: 26px !important;
+    line-height: 1.15 !important;
+  }
+  .output-card .lede {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    max-width: none !important;
+  }
+  .reason-mirror {
+    background: #F6F8FA !important;
+    padding: 12px 16px !important;
+    border-left: 3px solid #1F6FB2 !important;
+    margin-bottom: 20px !important;
+    page-break-inside: avoid;
+  }
+  .stats {
+    background: #F6F8FA !important;
+    padding: 14px !important;
+    page-break-inside: avoid;
+  }
+  .stat .v { font-size: 18px !important; }
+  .next {
+    grid-template-columns: 1fr 1fr !important;
+    page-break-inside: avoid;
+  }
+  .next .step {
+    page-break-inside: avoid;
+  }
+
+  /* Add a footer line to the printed artifact */
+  .output-card::after {
+    content: "The Gap Assessment  ·  Prepared by David Aaronson  ·  linkedin.com/in/david-aaronson-spmm";
+    display: block;
+    margin-top: 30px;
+    padding-top: 12px;
+    border-top: 1px solid #E6E9EE;
+    font-family: "SF Mono", Menlo, monospace;
+    font-size: 9px;
+    color: #6A7280;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+}

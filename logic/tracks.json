@@ -1,0 +1,130 @@
+{
+  "$comment": "Track routing rules and per-track output copy. The router scores each track from the user's clicked pain-sentence signals + hard inputs, then renders the winning track's card. Editable by non-devs.",
+
+  "routing": {
+    "$rules_comment": "Signals are weighted. Highest-scoring track wins. Ties break by priority order below.",
+    "priority_order": ["Displace", "Sidecar", "Category", "Overstory"],
+    "weights": {
+      "Displace":  { "renewal": 3, "new_ciso": 3, "audit": 2, "backlog": 1, "board": 1, "shadow_ai": 1 },
+      "Sidecar":   { "backlog": 3, "fault_line": 3, "board": 2, "audit": 1, "shadow_ai": 1 },
+      "Category":  { "no_scanner": 3, "curious": 1, "shadow_ai": 1 },
+      "Overstory": { "curious": 3 }
+    },
+    "$hard_input_boosts": "In gap-assessment.js: having a scanner selected boosts Sidecar/Displace; having no scanner boosts Category."
+  },
+
+  "tracks": {
+    "Sidecar": {
+      "tag": "The default land",
+      "reason_line": "Based on what you shared, the pain sits in the queue between finding and fixing. That's a specific gap worth addressing directly.",
+      "headline": "Your scanner keeps generating. Remedio clears the queue beside it.",
+      "lede": "You're wired into a VM program that isn't leaving. The risk isn't what you find. It's the backlog nobody's fixing. Remedio sits sidecar, autonomous, and starts clearing what your scanner keeps generating. Incremental budget, fast cycle, proof from day one.",
+      "stats_template": {
+        "$comment": "Placeholder math — David/Claude will replace with a real formula tuned to reported inputs.",
+        "backlog_cleared_q1_pct": 35,
+        "time_to_fix_reduction_pct": 60,
+        "budget_cycle": "Incremental"
+      },
+      "next_steps": [
+        {
+          "title": "Book a 30-minute backlog diagnostic",
+          "body": "We'll run one Remedio pass on a sample of your open findings and show what disappears."
+        },
+        {
+          "title": "Move from Find to Fix......with zero migration pain.",
+          "body": "How Remedio lands beside Tenable, Qualys, Rapid7. Nothing else stops."
+        },
+        {
+          "title": "Watch: 4 minutes on autonomous remediation",
+          "body": "See a real customer clear a 20K-item backlog in one weekend."
+        }
+      ],
+      "cta_primary": { "label": "Book the diagnostic", "href": "mailto:dovidchaim@gmail.com?subject=Book%20the%20diagnostic%20%E2%80%93%20from%20the%20Gap%20Assessment" },
+      "cta_secondary": { "label": "Read the Sidecar playbook", "href": "#sidecar-playbook" }
+    },
+
+    "Displace": {
+      "tag": "Qualified in on signal",
+      "reason_line": "Based on what you shared, it could be time to reevaluate what your current stack is delivering.",
+      "headline": "You have a moment. Here's the migration story.",
+      "lede": "Renewal, new CISO, or audit — the shift-in narrative is ripe. Displacement is bigger and slower than sidecar, and it's sponsored from the top. The proof is consolidation economics: fewer tools, fewer contracts, one platform doing what six were doing badly. Prioritization is dead. Fix everything.",
+      "stats_template": {
+        "tools_displaced_yr1": 3,
+        "consolidated_spend_reduction_pct": 40,
+        "board_report_ready": "Day 30"
+      },
+      "next_steps": [
+        {
+          "title": "Book a 45-minute consolidation call",
+          "body": "Bring your CIO or CFO. We map your current contracts and show the net."
+        },
+        {
+          "title": "Read: the Displace playbook",
+          "body": "How Remedio replaces the scanner AND the hardening tool without stopping either."
+        },
+        {
+          "title": "Get the sales diagnostic",
+          "body": "The full business case, RFP template, and champion talking points, ready to forward."
+        }
+      ],
+      "cta_primary": { "label": "Book the consolidation call", "href": "mailto:dovidchaim@gmail.com?subject=Book%20the%20consolidation%20call%20%E2%80%93%20from%20the%20Gap%20Assessment" },
+      "cta_secondary": { "label": "Read the Displace playbook", "href": "#displace-playbook" }
+    },
+
+    "Category": {
+      "tag": "New category adopter",
+      "reason_line": "Based on what you shared, you're not locked into a legacy stack. That means the whole category shift is available to you from day one.",
+      "headline": "You skip the prioritization-is-dead cycle.",
+      "lede": "You're building a program, not defending one. That means you can adopt Vulnerability Solutions from the ground up: fix everything, prioritize only by severity and known exploit, no legacy scanner overhead. This is the category the market is moving to. You get there first.",
+      "stats_template": {
+        "months_ahead_of_market": 24,
+        "legacy_tools_avoided": 3,
+        "greenfield_deploy_days": 14
+      },
+      "next_steps": [
+        {
+          "title": "Book a 30-minute program design call",
+          "body": "We sketch what a Remedio-native security program looks like at your scale."
+        },
+        {
+          "title": "Read: Vulnerability Solutions vs Vulnerability Management",
+          "body": "Why the category shift matters and how to explain it internally."
+        },
+        {
+          "title": "Meet the community",
+          "body": "Other greenfield adopters, shared playbooks, monthly office hours."
+        }
+      ],
+      "cta_primary": { "label": "Book the program design call", "href": "mailto:dovidchaim@gmail.com?subject=Book%20the%20program%20design%20call%20%E2%80%93%20from%20the%20Gap%20Assessment" },
+      "cta_secondary": { "label": "See the leggo map", "href": "#leggos" }
+    },
+
+    "Overstory": {
+      "tag": "Just reading",
+      "reason_line": "Based on what you shared, you're in research mode. Fair. Here's the short version, no pitch attached.",
+      "headline": "Fair enough. Here's the short version.",
+      "lede": "Finding was never the problem. Fixing is. The category the market is heading toward is Vulnerability Solutions: don't just prioritize, remediate. Remedio is the platform that does it. Read a bit, come back when your queue gets loud.",
+      "stats_template": {
+        "read_time_min": 12,
+        "resources_curated": 4,
+        "next_check_in": "When you have a signal"
+      },
+      "next_steps": [
+        {
+          "title": "Read the overstory one-pager",
+          "body": "The three-pillar case for why finding no longer moves the needle."
+        },
+        {
+          "title": "Skim: Prioritization is dead",
+          "body": "Mike McLaughlin's short piece on the category shift."
+        },
+        {
+          "title": "Get one email a month",
+          "body": "Not a nurture. One email, one idea. Unsubscribe anytime."
+        }
+      ],
+      "cta_primary": { "label": "Read the overstory", "href": "#overstory" },
+      "cta_secondary": { "label": "Subscribe (one email/month)", "href": "#subscribe" }
+    }
+  }
+}

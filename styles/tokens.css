@@ -1,0 +1,83 @@
+/* Design tokens
+ * Blend of Remedio's public site (white bg, gold accent) and David Aaronson's
+ * ABM one-pager (navy, editorial density, SF Mono eyebrows).
+ * The frame is Remedio; the editorial signal is the one-pager.
+ */
+:root {
+  /* Surfaces */
+  --bg: #FFFFFF;
+  --panel: #F6F8FA;
+  --tint: #EAF2F8;
+  --hair: #E6E9EE;
+
+  /* Text */
+  --ink: #1C2128;
+  --body: #3A424D;
+  --muted: #6A7280;
+  --inverse: #FFFFFF;
+
+  /* Brand */
+  --accent: #1F6FB2;
+  --accent-dk: #0E4B7A;
+  --navy: #0F2036;
+  --gold: #F4B32E;
+  --gold-dk: #C48A16;
+
+  /* Semantic */
+  --success: #2E844A;
+  --warn: #C48A16;
+  --danger: #C0392B;
+
+  /* Radius + shadow */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 20px;
+  --shadow-sm: 0 1px 2px rgba(15,32,54,.05), 0 1px 3px rgba(15,32,54,.06);
+  --shadow-md: 0 4px 12px rgba(15,32,54,.08), 0 2px 4px rgba(15,32,54,.05);
+  --shadow-lg: 0 12px 32px rgba(15,32,54,.12), 0 4px 8px rgba(15,32,54,.06);
+
+  /* Type */
+  --font-body: "Helvetica Neue", Helvetica, Arial, "system-ui", sans-serif;
+  --font-mono: "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+
+  /* Spacing scale (used sparingly, prefer explicit values in components) */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
+  --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px;
+
+  /* Layout */
+  --page-max: 1120px;
+  --content-max: 780px;
+}
+
+/* Universal reset (light-touch; not a nuke) */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--font-body);
+  color: var(--body);
+  background: var(--bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography scale */
+h1, h2, h3, h4 { color: var(--ink); font-weight: 800; letter-spacing: -0.01em; }
+h1 { font-size: 44px; line-height: 1.05; letter-spacing: -0.02em; }
+h2 { font-size: 30px; line-height: 1.15; letter-spacing: -0.015em; }
+h3 { font-size: 22px; line-height: 1.25; }
+h4 { font-size: 17px; line-height: 1.35; }
+p  { margin: 0; }
+
+/* Eyebrow (David's signature editorial element) */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.eyebrow.dk { color: var(--accent-dk); }
+.eyebrow.inverse { color: #8FC1E9; }

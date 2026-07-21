@@ -1,0 +1,39 @@
+{
+  "$comment": "Light backlog math for the marketing tool output. Rough, honest placeholder ranges. Tuneable by non-devs. Numbers hedged, never presented as a promise. If a prospect wants the real math, that's the deep diagnostic.",
+
+  "endpoint_band_midpoints": {
+    "< 1,000": 500,
+    "1K – 5K": 3000,
+    "5K – 20K": 12500,
+    "20K – 50K": 35000,
+    "50K+": 75000
+  },
+
+  "industry_incident_factor": {
+    "$comment": "Multiplier on the base pending-findings rate. Regulated + legacy-heavy industries carry higher backlogs per endpoint. Rough directional estimates.",
+    "Manufacturing": 1.1,
+    "Finance": 1.2,
+    "Healthcare": 1.3,
+    "Government": 1.4,
+    "Tech": 0.9,
+    "Other": 1.0
+  },
+
+  "backlog_per_endpoint_baseline": {
+    "$comment": "Rough baseline: pending findings per managed endpoint. Industry benchmarks vary widely; this is a mid-range placeholder for a plausible number.",
+    "value": 0.7
+  },
+
+  "remedio_clear_rate": {
+    "$comment": "Fraction of the current backlog Remedio would typically clear in the first quarter of operation.",
+    "q1": 0.32,
+    "yr1": 0.75
+  },
+
+  "time_to_fix_reduction": {
+    "$comment": "Median improvement in time-to-fix once Remedio is in the flow.",
+    "typical_pct": 60,
+    "range_low_pct": 45,
+    "range_high_pct": 75
+  }
+}

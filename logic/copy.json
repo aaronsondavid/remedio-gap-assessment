@@ -1,0 +1,76 @@
+{
+  "$comment": "Shared copy: overstory, screen headlines, microcopy. Sample content. Replace with authored funnel copy.",
+
+  "overstory": {
+    "eyebrow": "The Overstory · what every account hears",
+    "headline": "Finding was never the problem. Fixing is.",
+    "pillars": [
+      { "n": "New problem",    "p": "The backlog, not the unknown, is the risk." },
+      { "n": "New scoreboard", "p": "Boards measure time-to-fix now." },
+      { "n": "One fault line", "p": "Security finds. IT fixes. Fixes die in the handoff." }
+    ]
+  },
+
+  "landing": {
+    "hero_eyebrow": "Prepared by David Aaronson for Remedio",
+    "hero_headline": "The Gap Assessment.",
+    "hero_lede": "Run it against your own backlog. It qualifies, segments, and writes the champion's business case. Nobody fills out a form. Behavior routes each account to its play.",
+    "cta_primary": "Start the Gap Assessment",
+    "cta_secondary": "For sellers: run the deep diagnostic"
+  },
+
+  "gap_assessment": {
+    "intro_eyebrow": "The Gap Assessment · 3 minutes",
+    "intro_headline": "Show us where the queue lives.",
+    "intro_lede": "Not a form. Click the sentences that describe your day. We route from there.",
+
+    "step_pain_eyebrow": "Step 1 · What stings",
+    "step_pain_headline": "Click every sentence that sounds like your week.",
+    "step_pain_subtitle": "Pick as many as apply. Skip anything that doesn't. Behavior segments better than a checkbox tree.",
+
+    "step_hard_eyebrow": "Step 2 · Fast facts",
+    "step_hard_headline": "A few hard inputs.",
+    "step_hard_subtitle": "Enough to shape the output. Nothing personal, nothing you'd hesitate to share.",
+
+    "step_output_eyebrow": "Your play",
+    "step_output_headline": "Here's what the pattern says.",
+    "step_output_subtitle": "Written for the champion inside your org. Forward it. The share link keeps your inputs."
+  },
+
+  "hard_inputs": {
+    "endpoint_band": {
+      "label": "How many endpoints under management?",
+      "options": ["< 1,000", "1K – 5K", "5K – 20K", "20K – 50K", "50K+"]
+    },
+    "industry": {
+      "label": "Industry",
+      "options": ["Manufacturing", "Finance", "Healthcare", "Government", "Tech", "Other"]
+    },
+    "current_stack": {
+      "label": "What's in your stack today?",
+      "hint": "Add any tool that isn't listed. This is the freelancing that killed the last web version. Not this one.",
+      "options": [
+        { "id": "tenable", "label": "Tenable" },
+        { "id": "qualys", "label": "Qualys" },
+        { "id": "rapid7", "label": "Rapid7" },
+        { "id": "tanium", "label": "Tanium" },
+        { "id": "sccm", "label": "SCCM/MECM" },
+        { "id": "intune", "label": "Intune" },
+        { "id": "recast", "label": "Recast" },
+        { "id": "servicenow", "label": "ServiceNow VR" },
+        { "id": "sentinel", "label": "Microsoft Sentinel" },
+        { "id": "none", "label": "Nothing dedicated yet" }
+      ]
+    }
+  },
+
+  "share": {
+    "note": "This link carries your inputs. Send it to your CFO or CIO — they'll see the same output.",
+    "copy_label": "Copy share link"
+  },
+
+  "footer": {
+    "prepared_by": "Prepared by David Aaronson · dovidchaim@gmail.com · linkedin.com/in/david-aaronson-spmm",
+    "note": "Gift to Remedio. Fork this repo if you want to make it official."
+  }
+}

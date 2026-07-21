@@ -1,0 +1,68 @@
+{
+  "$comment": "Matt Rowe's leggo blocks framework. What Remedio owns today, what ships by EOY, and the moat. Used to visualize consolidation and to populate the Kill Chain Fix Map in the sales diagnostic. Editable.",
+
+  "modules": {
+    "Baseline": {
+      "label": "Remedio Baseline",
+      "role": "Configuration security & endpoint hardening",
+      "status": "shipping",
+      "displaces": ["Tanium", "SCCM", "Intune (hardening)", "Recast"]
+    },
+    "Fortify": {
+      "label": "Remedio Fortify",
+      "role": "Vulnerability + misconfig remediation with dependency mapping and one-click rollback",
+      "status": "shipping",
+      "displaces": ["Tenable (patch side)", "Qualys (patch side)"]
+    },
+    "Assure": {
+      "label": "Remedio Assure",
+      "role": "Continuous compliance enforcement + custom compliance mapping",
+      "status": "shipping",
+      "displaces": ["Manual audit prep tooling", "GRC custom mappings"]
+    },
+    "Gate": {
+      "label": "Remedio Gate",
+      "role": "Application & software control (with patching)",
+      "status": "shipping",
+      "displaces": ["Legacy app control tools without patching"]
+    },
+    "AI Govern": {
+      "label": "Remedio AI Govern",
+      "role": "AI attack surface control + shadow AI governance + browser ext misconfig",
+      "status": "shipping",
+      "displaces": ["Emerging AI-governance point tools"]
+    },
+    "Attack Surface": {
+      "label": "Remedio Attack Surface",
+      "role": "Network scanner + vulnerability discovery + enrichment",
+      "status": "eoy",
+      "displaces": ["Tenable (scanner side)", "Qualys (scanner side)", "Rapid7"]
+    },
+    "App Patching": {
+      "label": "App Patching (Fortify extension)",
+      "role": "Third-party application patching",
+      "status": "eoy",
+      "displaces": ["Ivanti", "PDQ", "Custom scripting"]
+    },
+    "Kill Chain": {
+      "label": "Full Kill Chain Analysis",
+      "role": "Scan -> Vulns -> Kill Chain -> the worst get fixed first, ALL get fixed",
+      "status": "coup",
+      "displaces": ["Prioritization-only VM"],
+      "moat_note": "No other platform will do this in the next 2 years. This is the barrier to entry."
+    }
+  },
+
+  "prioritization_metrics": {
+    "$comment": "Mike's line: fix everything, but the ONLY two prioritization metrics that matter.",
+    "primary": ["Severity of the issue", "Known Exploit"],
+    "retired": ["CVSS-only sorting", "Prioritization by asset value alone", "Prioritization by scanner confidence alone"]
+  },
+
+  "category_shift": {
+    "old": "Vulnerability Management (VM) / CTEM",
+    "new": "Vulnerability Solutions",
+    "philosophy": "Finding risk solves nothing. Fixing everything solves everything.",
+    "analog": "Remedio : VM :: CrowdStrike : signature-based AV"
+  }
+}

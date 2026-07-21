@@ -1,0 +1,150 @@
+/* Layout: page frame, hero band, editorial sections */
+
+.page {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 40px 32px 80px;
+}
+.page.narrow {
+  max-width: var(--content-max);
+}
+
+/* Header strip */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  border-bottom: 1px solid var(--hair);
+  background: var(--bg);
+}
+.topbar .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.topbar .brand .dot {
+  width: 24px; height: 24px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, var(--accent), var(--navy));
+}
+.topbar nav {
+  display: flex;
+  gap: 24px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.topbar nav a { color: var(--muted); text-decoration: none; }
+.topbar nav a:hover { color: var(--ink); }
+
+/* Hero */
+.hero {
+  padding: 24px 0 40px;
+}
+.hero h1 { max-width: 780px; }
+.hero .lede {
+  max-width: 640px;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--body);
+  margin-top: 16px;
+}
+
+/* Rule */
+.rule {
+  height: 2px;
+  background: var(--ink);
+  margin: 32px 0;
+}
+
+/* Editorial band (like the one-pager overstory) */
+.band {
+  background: var(--tint);
+  border-radius: var(--r-lg);
+  padding: 40px 44px;
+  margin: 24px 0;
+}
+.band.panel { background: var(--panel); }
+.band.navy { background: var(--navy); color: #EAF2F8; }
+.band.navy h2, .band.navy h3 { color: #fff; }
+
+/* Three-column pillar grid */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 16px;
+}
+@media (max-width: 720px) {
+  .pillars { grid-template-columns: 1fr; }
+}
+.pillar .n {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  color: var(--accent-dk);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+.pillar p {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+/* Fork (two-track) */
+.fork {
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr;
+  gap: 0;
+  align-items: stretch;
+  margin: 24px 0;
+}
+@media (max-width: 720px) {
+  .fork { grid-template-columns: 1fr; gap: 16px; }
+}
+
+.progress {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.progress .step {
+  height: 4px;
+  flex: 1;
+  border-radius: 2px;
+  background: var(--hair);
+}
+.progress .step.done { background: var(--accent); }
+.progress .step.current { background: var(--accent); }
+
+/* Section (used inside the wizard) */
+.section {
+  padding: 32px 0;
+}
+.section h2 { margin-bottom: 8px; }
+.section .subtitle {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 24px;
+  max-width: 560px;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--hair);
+  padding: 24px 32px;
+  color: var(--muted);
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.footer a { color: var(--muted); text-decoration: none; }
+.footer a:hover { color: var(--ink); }

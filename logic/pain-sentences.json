@@ -1,0 +1,65 @@
+{
+  "$comment": "Behavior-based segmentation. Each sentence a prospect can click carries signals that route toward one of four tracks. Edit copy freely; keep the signal keys so the router still works. Signals: fault_line, backlog, board, renewal, new_ciso, audit, no_scanner, curious.",
+  "sentences": [
+    {
+      "id": "backlog_missing_sla",
+      "text": "My scanner keeps generating. My IT team keeps missing SLA.",
+      "signals": ["backlog", "fault_line"]
+    },
+    {
+      "id": "board_time_to_fix",
+      "text": "Board asks for time-to-fix. I can't answer.",
+      "signals": ["board", "backlog"]
+    },
+    {
+      "id": "findings_die_in_email",
+      "text": "Findings die in email between security and infra.",
+      "signals": ["fault_line"]
+    },
+    {
+      "id": "prioritization_endless",
+      "text": "I've been prioritizing forever and the queue only grows.",
+      "signals": ["backlog"]
+    },
+    {
+      "id": "tanium_renewal",
+      "text": "My hardening tool renews in the next six months and I'm not thrilled.",
+      "signals": ["renewal"]
+    },
+    {
+      "id": "scanner_renewal",
+      "text": "My scanner renews in the next six months and I'm not thrilled.",
+      "signals": ["renewal"]
+    },
+    {
+      "id": "new_ciso",
+      "text": "New CISO landed in the last twelve months. Everything's on the table.",
+      "signals": ["new_ciso"]
+    },
+    {
+      "id": "active_audit",
+      "text": "Audit is breathing down my neck.",
+      "signals": ["audit"]
+    },
+    {
+      "id": "no_scanner_unsure",
+      "text": "I don't have a scanner. I'm not sure I want one.",
+      "signals": ["no_scanner"]
+    },
+    {
+      "id": "greenfield_curious",
+      "text": "We're a newer program. I'm figuring out what stack to build.",
+      "signals": ["no_scanner", "curious"]
+    },
+    {
+      "id": "just_reading",
+      "text": "Honestly, just reading up on the space.",
+      "signals": ["curious"]
+    },
+    {
+      "id": "shadow_ai",
+      "text": "Shadow AI is a growing problem I don't have a handle on.",
+      "signals": ["shadow_ai"]
+    }
+  ]
+}
