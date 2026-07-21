@@ -266,12 +266,10 @@ function renderOutput(c) {
   const step = logic.copy.gap_assessment;
   const share = shareUrl();
 
-  // Reason mirror: show up to 4 of the sentences the user clicked
+  // Reason mirror: show ALL the sentences the user clicked
   const clickedSentences = state.selectedSentences
     .map(id => logic.pain.sentences.find(x => x.id === id))
-    .filter(Boolean)
-    .slice(0, 4);
-  const overflow = state.selectedSentences.length - clickedSentences.length;
+    .filter(Boolean);
 
   // Hide the internal track label; keep the eyebrow neutral
   c.innerHTML = `
@@ -281,14 +279,11 @@ function renderOutput(c) {
       <p class="subtitle">${step.step_output_subtitle}</p>
 
       <div class="output-card">
-        <div class="tag">${t.tag}</div>
-
         ${clickedSentences.length ? `
           <div class="reason-mirror">
             <div class="eyebrow" style="margin-bottom: 8px;">What you told us</div>
             <ul class="mirror-list">
               ${clickedSentences.map(s => `<li>"${s.text}"</li>`).join("")}
-              ${overflow > 0 ? `<li class="more">+ ${overflow} more</li>` : ""}
             </ul>
             <p class="reason-line">${t.reason_line || ""}</p>
           </div>
@@ -315,7 +310,6 @@ function renderOutput(c) {
         </div>
 
         <div class="utility-row">
-          <a class="btn link" href="${t.cta_secondary.href}">${t.cta_secondary.label}</a>
           <button class="btn link" data-action="download-pdf">Download PDF</button>
         </div>
 
